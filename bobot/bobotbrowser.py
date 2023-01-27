@@ -59,6 +59,6 @@ class BobotBrowser(BobotWin):
         file += backup_file if backup_file[-5] == ".html" else f"{backup_file}.html"
 
         with open(file, "w", encoding = "utf-8") as outfile:
-            outfile.write(pyperclip.paste()
+            outfile.write(pyperclip.paste())
 
         self.close_browser_tab()
