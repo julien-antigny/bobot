@@ -45,7 +45,7 @@ class BobotBrowser(BobotWin):
         """ Open page's code source """
         self.ctrl("u")
 
-    def save_page_code_source(backup_path: str, backup_file: str, waiting_time: float = 0.5):
+    def save_page_code_source(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
         """ Save page code source """
         assert waiting_time > 0
         assert os.path.exists(backup_path)
