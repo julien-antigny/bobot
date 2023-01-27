@@ -54,6 +54,6 @@ class Mechanism:
         """ Add a text in  clipboard """
         pyperclip.copy(text)
 
-    def paste(self):
+    def paste(self) -> str:
         """ Paste the current text from the clipboard """
-        pyperclip.paste()
+        return pyperclip.paste()
