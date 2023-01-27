@@ -45,20 +45,19 @@ class BobotBrowser(BobotWin):
         """ Open page's code source """
         self.ctrl("u")
 
-    def save_page_code_source(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
-        """ Save page code source """
+    def save_text_of_page(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
+        """ Save text of web page """
         assert waiting_time > 0
         assert os.path.exists(backup_path)
 
-        self.open_code_source_page()
         self.ctrl("a")
         self.wait(waiting_time)
         self.ctrl("c")
         
         file  = backup_path if backup_path[-1] == "/" else f"{backup_path}/"
-        file += backup_file if backup_file[-5] == ".html" else f"{backup_file}.html"
-
-        with open(file, "w", encoding = "utf-8") as outfile:
-            outfile.write(pyperclip.paste())
-
-        self.close_browser_tab()
+    
+    def save_page_code_source(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
+        """ Save page code source """
+        self.open_code_source_page()
+        self.wait(waiting_time)
+        self.save_text_of_page(backup_path, back_file, waiting_time)
