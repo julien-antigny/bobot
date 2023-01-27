@@ -8,6 +8,11 @@ class BobotWin(Mechanism):
         """Press on enter """
         self.press("enter")
 
+    def write(self, text: str):
+        self.copy(text)
+        self.ctrl("v")
+        self.copy("")
+
     def left_tab(self):
         """ Press on left tab """
         self.press("\t")
