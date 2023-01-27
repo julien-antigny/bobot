@@ -1,6 +1,6 @@
-import pyautogui as pt
+import pyperclip
 from time import sleep
-
+import pyautogui as pt
 from typing import Tuple
 
 class Mechanism:
@@ -49,3 +49,11 @@ class Mechanism:
         """ Wait """
         assert waiting_time > 0
         sleep(waiting_time)
+
+    def copy(self, text: str):
+        """ Add a text in  clipboard """
+        pyperclip.copy(text)
+
+    def paste(self):
+        """ Paste the current text from the clipboard """
+        pyperclip.paste()
