@@ -53,6 +53,7 @@ class BobotBrowser(BobotWin):
         self.ctrl("a")
         self.wait(waiting_time)
         self.ctrl("c")
+        self.wait(1)
         
         file  = backup_path if backup_path[-1] == "/" else f"{backup_path}/"
         file += backup_file if backup_file[-5] == ".html" else f"{backup_file}.html"
