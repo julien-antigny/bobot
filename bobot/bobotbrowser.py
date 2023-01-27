@@ -56,7 +56,7 @@ class BobotBrowser(BobotWin):
         
         file  = backup_path if backup_path[-1] == "/" else f"{backup_path}/"
 
-        with open(file, "r", encoding = "utf-8") as outfile:
+        with open(file, "w", encoding = "utf-8") as outfile:
             outfile.write(self.paste())
     
     def save_page_code_source(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
