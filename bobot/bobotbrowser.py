@@ -2,7 +2,7 @@ import os
 import pyperclip
 from   bobotwin import BobotWin
 
-class BobotNav(BobotWin):
+class BobotBrowser(BobotWin):
     def __init__(self):
         pass
 
