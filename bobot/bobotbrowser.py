@@ -45,6 +45,10 @@ class BobotBrowser(BobotWin):
         """ Open page's code source """
         self.ctrl("u")
 
+    def open_console(self):
+        """ Open browser console """
+        self.press("ctrlleft", "maj", "j")
+
     def save_text_of_page(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
         """ Save text of web page """
         assert waiting_time > 0
