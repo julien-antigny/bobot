@@ -65,7 +65,8 @@ class BobotBrowser(BobotWin):
         self.ctrl("c")
         
         file  = backup_path if backup_path[-1] == "/" else f"{backup_path}/"
-        file += backup_file if backup_file[-5] == ".html" else f"{backup_file}.html"
+        file += backup_file if ".html" in backup_file  else f"{backup_file}.html"
+
         with open(file, "w", encoding = "utf-8") as outfile:
             outfile.write(self.paste())
     
