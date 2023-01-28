@@ -57,3 +57,8 @@ class Mechanism:
     def paste(self) -> str:
         """ Paste the current text from the clipboard """
         return pyperclip.paste()
+
+    def write_with_keyboard(self, text: str, interval: float = 0):
+        """ Write with keyboard """
+        assert interval >= 0
+        pt.write(text, interval = interval)
