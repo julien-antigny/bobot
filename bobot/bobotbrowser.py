@@ -53,7 +53,7 @@ class BobotBrowser(BobotWin):
 
     def open_console(self):
         """ Open browser console """
-        self.press("ctrlleft", "maj", "j")
+        self.press("ctrlleft", "shift", "j")
 
     def save_text_of_page(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
         """ Save text of web page """
