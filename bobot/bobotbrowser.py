@@ -9,7 +9,7 @@ class BobotBrowser(BobotWin):
     def open_brave_with_powershell(self, url = "", incognito = False):
         """ Open Brave with a powershell command """
         incognito = "--incognito" if incognito else ""
-        cmd = f"start \"{incognito} {url}\""
+        cmd = f"start brave \"{incognito} {url}\""
         os.system(cmd)
 
     def reload(self):
