@@ -83,7 +83,7 @@ class BobotBrowser(BobotWin):
         file += backup_file if ".html" in backup_file  else f"{backup_file}.html"
 
         with open(file, "w", encoding = "utf-8") as outfile:
-            print(self.paste()
+            print(self.paste())
             outfile.write(self.paste())
     
     def save_page_code_source(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
