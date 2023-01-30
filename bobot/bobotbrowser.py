@@ -12,6 +12,12 @@ class BobotBrowser(BobotWin):
         cmd = f"start brave \"{incognito} {url}\""
         os.system(cmd)
 
+    def open_firefox_with_term_ubuntu(self, url = "", incognito = False):
+        """ Open Firefox with terminal ubuntu """
+        incognito = "--private" if incognito else ""
+        cmd = f"firefox \"{incognito} {url}\""
+        os.system(cmd)
+
     def reload(self):
         """ Reload page """
         self.ctrl("f5")
@@ -51,9 +57,18 @@ class BobotBrowser(BobotWin):
         """ Open page's code source """
         self.ctrl("u")
 
-    def open_console(self):
+    def open_console(self, browser = "brave"):
         """ Open browser console """
+        if browser == "brave": self.open_brave_console()
+        if browser == "firefox": self.open_firefox_console()
+
+    def open_brave_console(self):
+        """ Open brave console """
         self.press("ctrlleft", "shift", "j")
+
+    def open_firefox_console(self):
+        """ Open firefox console """
+        self.press("ctrlleft", "shift", "k")
 
     def save_text_of_page(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
         """ Save text of web page """
@@ -68,6 +83,7 @@ class BobotBrowser(BobotWin):
         file += backup_file if ".html" in backup_file  else f"{backup_file}.html"
 
         with open(file, "w", encoding = "utf-8") as outfile:
+            print(self.paste()
             outfile.write(self.paste())
     
     def save_page_code_source(self, backup_path: str, backup_file: str, waiting_time: float = 0.5):
