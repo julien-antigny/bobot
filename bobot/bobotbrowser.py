@@ -14,7 +14,7 @@ class BobotBrowser(BobotWin):
 
     def open_firefox_with_term_ubuntu(self, url = "", incognito = False):
         """ Open Firefox with terminal ubuntu """
-        incognito = "--private" if incognito else ""
+        incognito = "--private-window" if incognito else ""
         cmd = f"firefox \"{incognito} {url}\""
         os.system(cmd)
 
