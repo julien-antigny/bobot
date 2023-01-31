@@ -25,6 +25,18 @@ class BobotUbuntu(Mechanism):
         """ Press on ctrl + key """
         self.press("ctrlleft", key)
 
+    def ctrl_c(self):
+        """ Ctrl C """
+        self.ctrl("c")
+
+    def ctrl_v(self):
+        """ Ctrl V """
+        self.press("ctrlleft", "shift", "v")
+
+    def menu(self):
+        """ Open the menu """
+        self.press("win")
+
     def go_left_desktop(self):
         """ Move to left desktop """
         self.press("ctrlleft", "alt", "left")

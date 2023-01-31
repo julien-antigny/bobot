@@ -25,8 +25,16 @@ class BobotWin(Mechanism):
         """ Press on ctrl + key """
         self.press("ctrlleft", key)
 
-    def win(self):
-        """ Press on windows button """
+    def ctrl_c(self):
+        """ Ctrl V """
+        self.ctrl("c")
+
+    def ctrl_v(self):
+        """ Ctrl V """
+        self.ctrl("v")
+
+    def menu(self):
+        """ Open the menu """
         self.press("win")
 
     def go_left_desktop(self):
