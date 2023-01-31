@@ -58,7 +58,14 @@ class Mechanism:
         """ Paste the current text from the clipboard """
         return pyperclip.paste()
 
-    def write_with_keyboard(self, text: str, interval: float = 0):
+    def write_with_keyboard(self, text: str, interval: float = 0, matches: dict = None):
         """ Write with keyboard """
         assert interval >= 0
+        
+        if matches != None:
+            new_text = ""
+            for letter in text:
+                new_text += matches[letter] if letter in matches else letter
+            text = new_text
+
         pt.write(text, interval = interval)
